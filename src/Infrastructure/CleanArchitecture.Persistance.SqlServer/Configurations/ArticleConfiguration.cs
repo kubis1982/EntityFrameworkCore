@@ -21,7 +21,7 @@
             builder.Property(n => n.Unit)
                 .HasMaxLength(10);
 
-            var unitsNavigation = builder.OwnsMany(n => n.Units, n => {
+            builder.OwnsMany(n => n.Units, n => {
                 n.ToTable("ArticleUnit", "Seven");
                 n.Property(n => n.Unit).HasMaxLength(10);
                 n.HasKey(nameof(Article) + nameof(Article.Id), nameof(ArticleUnit.Unit));
