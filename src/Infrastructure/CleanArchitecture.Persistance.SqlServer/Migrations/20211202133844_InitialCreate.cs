@@ -44,6 +44,13 @@ namespace CleanArchitecture.Persistance.SqlServer.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Article_Code",
+                schema: "Seven",
+                table: "Article",
+                column: "Code",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

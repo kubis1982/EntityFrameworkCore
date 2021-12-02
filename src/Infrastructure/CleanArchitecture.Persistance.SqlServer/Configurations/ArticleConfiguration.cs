@@ -13,6 +13,8 @@
                 .HasMaxLength(40)
                 .IsRequired();
 
+            builder.HasIndex(p => p.Code).IsUnique();
+
             builder.Property(n => n.Name)
                 .HasMaxLength(255);
 

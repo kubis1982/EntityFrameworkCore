@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CleanArchitecture.Persistance.SqlServer.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20211202123705_InitialCreate")]
+    [Migration("20211202133844_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,9 @@ namespace CleanArchitecture.Persistance.SqlServer.Migrations
                         .HasColumnType("nvarchar(10)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Code")
+                        .IsUnique();
 
                     b.ToTable("Article", "Seven");
                 });

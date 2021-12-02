@@ -40,6 +40,9 @@ namespace CleanArchitecture.Persistance.SqlServer.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Code")
+                        .IsUnique();
+
                     b.ToTable("Article", "Seven");
                 });
 
